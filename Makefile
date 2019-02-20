@@ -5,23 +5,23 @@
 ## All purpose Makefile by Tabis Lucas
 ##
 
-all:	tests_run
+all:			tests_run
 
 tests_run:
-		cd tests/ && $(MAKE)
+				cd tests/ && $(MAKE)
 
 clean:
-		@$(RM) -f $(OBJ)
-		@find -type f -name '*~' -delete
-		@find -type f -name '#*#' -delete
-		@find -type f -name '*.o' -delete
-		@find -type f -name '*.gcda' -delete
-		@find -type f -name '*.gcno' -delete
-		@$(RM) -r -f *~ \#*\#
+				@$(RM) -f $(OBJ)
+				@find -type f -name '*~' -delete
+				@find -type f -name '#*#' -delete
+				@find -type f -name '*.o' -delete
+				@find -type f -name '*.gcda' -delete
+				@find -type f -name '*.gcno' -delete
+				@$(RM) -r -f *~ \#*\#
 
-fclean:         clean
-		@$(RM) -f $(NAME)
+fclean:			clean
+				@$(RM) -f $(NAME)
 
-re:		fclean all
+re:				fclean all
 
-.PHONY:	tests_run clean fclean re
+.PHONY:			tests_run clean fclean re

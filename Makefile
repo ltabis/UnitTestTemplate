@@ -5,11 +5,11 @@
 ## All purpose Makefile by Tabis Lucas
 ##
 
-SRC_DIR=        $(realpath src/)
+SRC_DIR=        $(realpath src)
 
 SRC=	$(wildcard $(SRC_DIR)/*.c)
 
-CFLAGS=	-Wall -Wextra -Werror -Iinclude
+CFLAGS=	-g -W -Wall -Wextra -Werror -Iinclude
 
 NAME=	project
 
@@ -18,7 +18,7 @@ OBJ=	$(SRC:.c=.o)
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-		cc -o $(NAME) $(OBJ) $(CFLAGS)
+		cc -o $(NAME) $(OBJ) $(LDFLAGS)
 
 all:		$(NAME)
 

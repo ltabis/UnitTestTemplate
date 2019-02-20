@@ -5,11 +5,9 @@
 ## 
 ##
 
-SRC_DIR=        $(realpath ../src/)
+SRC_DIR=        $(realpath ../src)
 
 SRC=           $(SRC_DIR)/isneg.c
-
-SRC=           $(wildcard $(SRC_DIR)/*.c)
 
 SRC_UT_DIR=     $(realpath .)
 
@@ -18,7 +16,7 @@ SRC_UT=         $(SRC_UT_DIR)/unit_test_function_basic.c	\
 
 OBJ=            $(SRC:.c=.o) $(SRC_UT:.c=.o)
 
-CFLAGS=         -Wall -Wextra --coverage -I../include/
+CFLAGS=         -Wall -Wextra --coverage -I../include
 
 LDFLAGS=        -lcriterion -lgcov
 
@@ -27,7 +25,7 @@ NAME=           unit_tests
 all:            $(NAME) run
 
 $(NAME):        $(OBJ)
-		cc -o $(NAME) $(OBJ) $(LDFLAGS)
+		cc -o $(NAME) $(OBJ) $(CFLAGS) $(LDFLAGS)
 
 run:		$(NAME)
 		./unit_tests

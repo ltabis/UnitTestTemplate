@@ -2,23 +2,21 @@
 ## EPITECH PROJECT, 2017
 ## Makefile
 ## File description:
-## makefile for unit testing of my_printf
+## 
 ##
 
-SRC_DIR=        $(realpath ../ex00)
-SRC_DIR1=        $(realpath ../ex01)
+SRC_DIR=        $(realpath ../src/)
 
-SRC=           	$(SRC_DIR)/.c	\
-	$(SRC_DIR)/lists_functions_2.c
+SRC=           $(SRC_DIR)/isneg.c
 
 SRC_UT_DIR=     $(realpath .)
 
-SRC_UT=         $(SRC_UT_DIR)/unit_test_function_1.c	\
-		$(SRC_UT_DIR)/unit_test_function_tree.c
+SRC_UT=         $(SRC_UT_DIR)/unit_test_function_basic.c	\
+		$(SRC_UT_DIR)/unit_test_function_cinout.c
 
 OBJ=            $(SRC:.c=.o) $(SRC_UT:.c=.o)
 
-CFLAGS=         -Wall -Wextra --coverage -I.
+CFLAGS=         -Wall -Wextra --coverage -I../include/
 
 LDFLAGS=        -lcriterion -lgcov
 

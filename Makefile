@@ -5,7 +5,20 @@
 ## All purpose Makefile by Tabis Lucas
 ##
 
-all:	tests_run
+SRC_DIR=        $(realpath src/)
+
+SRC=	$(wildcard $(SRC_DIR)/*.c)
+
+CFLAGS=	-Wall -Wextra -Werror -Iinclude
+
+NAME=	project
+
+OBJ=	$(SRC:.c=.o)
+
+all:	$(NAME)
+
+$(NAME):	$(OBJ)
+		cc -o $(NAME) $(OBJ) $(LDFLAGS)
 
 tests_run:
 		cd tests/ && $(MAKE)

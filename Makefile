@@ -18,9 +18,9 @@ OBJ=	$(SRC:.c=.o)
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-		cc -o $(NAME) $(OBJ) $(LDFLAGS)
+		cc -o $(NAME) $(OBJ) $(CFLAGS)
 
-all:			$(NAME)
+all:		$(NAME)
 
 tests_run:
 				cd tests/ && $(MAKE)

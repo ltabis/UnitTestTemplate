@@ -35,6 +35,7 @@ clean:
 				@$(RM) -r -f *~ \#*\#
 
 fclean:			clean
+				cd tests/ && $(MAKE) fclean
 				@$(RM) -f $(NAME)
 
 re:				fclean all

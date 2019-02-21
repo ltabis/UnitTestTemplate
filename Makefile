@@ -5,7 +5,22 @@
 ## All purpose Makefile by Tabis Lucas
 ##
 
-all:			tests_run
+SRC_DIR=        $(realpath src)
+
+SRC=	$(wildcard $(SRC_DIR)/*.c)
+
+CFLAGS=	-g -W -Wall -Wextra -Werror -Iinclude
+
+NAME=	project
+
+OBJ=	$(SRC:.c=.o)
+
+all:	$(NAME)
+
+$(NAME):	$(OBJ)
+		cc -o $(NAME) $(OBJ) $(LDFLAGS)
+
+all:		$(NAME)
 
 #
 #	D'AUTRES RULES DU MAKEFILE
@@ -25,6 +40,7 @@ clean:
 				@find -type f -name '*.gcno' -delete
 				@$(RM) -r -f *~ \#*\#
 fclean:			clean
+				cd tests/ && $(MAKE) fclean
 				@$(RM) -f $(NAME)
 
 ## Recompiler

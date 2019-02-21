@@ -8,7 +8,7 @@
 #include <criterion/criterion.h>
 #include "my.h"
 
-Test(lists, empty_list)
+Test(tests, isneg_test)
 {
     cr_assert_eq(isneg(3), 1);
 }

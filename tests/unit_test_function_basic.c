@@ -11,4 +11,5 @@
 Test(tests, isneg_test)
 {
     cr_assert_eq(isneg(3), 1);
+    cr_assert_eq(isneg(-1), 0);
 }

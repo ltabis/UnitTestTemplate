@@ -5,6 +5,10 @@
 ## 
 ##
 
+## Exercice sources (to complete)
+EX_DIR=
+SRC_EX=
+
 ## Sources à tester
 SRC_DIR=        $(realpath ../src)
 SRC=           $(SRC_DIR)/isneg.c

@@ -64,17 +64,23 @@ def execute_command(stack):
             break
 
 def commit_files():
+
+    # Add all files
     process = subprocess.Popen(["git", "add", "--all"],
                            stdout=subprocess.PIPE,
                            universal_newlines=True)
     wait(process)
     print()
+
+    # Get commit message and branch
     commit = input("Please specify your \033[94mcommit message\033[0m: ")
     branch = input("Please specify the \033[94mbranch\033[0m: ")
     process = subprocess.Popen(["git", "commit", "-m", commit],
                            stdout=subprocess.PIPE,
                            universal_newlines=True)
     wait(process)
+
+    # Push modification    
     process = subprocess.Popen(["git", "push", "origin", branch],
                            stdout=subprocess.PIPE,
                            universal_newlines=True)

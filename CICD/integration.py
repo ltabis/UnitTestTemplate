@@ -3,6 +3,7 @@
 import os
 import sys
 import subprocess
+import confReader
 
 # Stack class
 class Stack:
@@ -26,7 +27,7 @@ class Stack:
 
     # Push an element
     def push(self, value):
-        self.stack.append(value)
+        self.stack.append(value.split(" "))
 
     def top(self):
         return self.stack[-1] if len(self.stack) != 0 else None
@@ -88,7 +89,13 @@ def commit_files():
 
 # Main function
 def main():
-    stack = Stack("make fclean", "make tests_run", "make re")
+    conf = confReader.ConfigReader("/etc/pipeline.conf")
+    steps = conf.get_all()
+    stack = Stack()
+
+    # fill stack
+    for step in steps:
+        stack.push(step)
 
     # Emptying stack of commands
     while stack.empty() != True:

@@ -89,7 +89,7 @@ def commit_files():
 
 # Main function
 def main():
-    conf = confReader.ConfigReader("CICD/pipeline.conf")
+    conf = confReader.ConfigReader("/etc/pipeline.conf")
     steps = conf.get_all()
     stack = Stack()
 

@@ -5,13 +5,10 @@
 ## 
 ##
 
-## Exercice sources (to complete)
-EX_DIR=
-SRC_EX=
-
 ## Sources à tester
 SRC_DIR=        $(realpath ../src)
-SRC=           $(SRC_DIR)/isneg.c
+SRC=           $(SRC_DIR)/isneg.c \
+	       ../C/exercices/ex01.c
 
 ## Tests unitaires
 SRC_UT_DIR=     $(realpath .)

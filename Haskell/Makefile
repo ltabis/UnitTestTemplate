@@ -7,7 +7,7 @@
 
 SRC_DIR		=	$(realpath ./src)
 
-NAME		=	myHaskellProgram
+NAME		=	workshopUnitTest
 
 TEST_NAME	=	test_coverage
 
@@ -17,7 +17,7 @@ RM			=	rm -f
 
 PA_TEST		= `stack path --local-install-root`/hpc/$(NAME)/$(NAME)-test/hpc_index.html
 
-PA			= `stack path --local-install-root`/bin/imageCompressor-exe
+PA			= `stack path --local-install-root`/bin/$(NAME)-exe
 
 all:	$(NAME)
 

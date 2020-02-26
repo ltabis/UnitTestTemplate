@@ -1,6 +1,13 @@
 module Main where
 
-import Lib
+import System.Environment
+import System.Exit
+import System.IO
 
-main :: IO ()
-main = someFunc
+import MainProgram
+
+main::IO ()
+main = do
+    args <- getArgs
+    if (length args == 1) then dispRound args else exitWith (ExitFailure 84)
+    return()

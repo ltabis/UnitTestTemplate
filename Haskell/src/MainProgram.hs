@@ -10,4 +10,4 @@ dispRound::[String]->IO ()
 dispRound args
     | toConvert == -1 = exitWith (ExitFailure 84)
     | otherwise = putStrLn $ show $ roundF toConvert
-    where toConvert = convertToFloat (args !! 0)
+    where toConvert = convertToFloat $ args !! 0

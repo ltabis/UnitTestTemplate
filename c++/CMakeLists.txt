@@ -12,19 +12,20 @@ enable_testing()
 ## Setting flags for linux
 if (UNIX)
     find_package(Threads)
-    set(CMAKE_CXX_FLAGS "-g -lgcov --coverage -pipe -fPIC")
+    set(CMAKE_CXX_FLAGS "-g -lgcov --coverage")
 endif()
 
 set(SRC
-
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/CoinFlipper.cpp
 )
 
 ## Include headers to program
 include_directories(
+    ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
 ## Client executable
-add_executable(a.out
+add_executable(WTU
     ${SRC}
     ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
 )
@@ -33,6 +34,7 @@ add_executable(a.out
 
 ## Test sources
 set (SRC_TEST
+    ${CMAKE_CURRENT_SOURCE_DIR}/tests/UnitTest_CoinFlipper.cpp
 )
 
 ## Creating executable of unit tests

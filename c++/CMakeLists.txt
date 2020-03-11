@@ -15,6 +15,7 @@ if (UNIX)
     set(CMAKE_CXX_FLAGS "-g -lgcov --coverage")
 endif()
 
+## programm src
 set(SRC
     ${CMAKE_CURRENT_SOURCE_DIR}/src/CoinFlipper.cpp
 )
@@ -48,6 +49,7 @@ add_executable(unit_tests
     ${CMAKE_CURRENT_SOURCE_DIR}/tests/main.cpp
 )
 
+## link lib to unit_test executable
 target_link_libraries(unit_tests PUBLIC
     gtest
     CONAN_PKG::gtest

@@ -51,7 +51,6 @@ add_executable(unit_tests
 
 ## link lib to unit_test executable
 target_link_libraries(unit_tests PUBLIC
-    gtest
     CONAN_PKG::gtest
     ${CMAKE_THREAD_LIBS_INIT}
 )
